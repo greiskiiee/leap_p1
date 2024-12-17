@@ -21,6 +21,34 @@
         display: flex;
         justify-content: center;
       }
+      article {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-family: arial;
+        font-style: normal;
+        text-align: center;
+        line-height: normal;
+      }
+      footer {
+        display: flex;
+        width: 1200px;
+        height: 44px;
+        padding: 80px 120px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 166px;
+      }
+      header {
+        display: flex;
+        width: 1200px;
+        max-width: 100vw;
+        justify-content: space-between;
+        align-items: center;
+      }
       @font-face {
         font-family: Bebas Neue;
         src: url(BebasNeue-Regular.ttf);
@@ -28,6 +56,10 @@
       @font-face {
         font-family: Hanuman;
         src: url(Hanuman-Regular.ttf);
+      }
+      @font-face {
+        font-family: montserrat;
+        src: url(Montserrat-Regular.ttf);
       }
       .first {
         background-image: url(HeroImage.png);
@@ -171,6 +203,14 @@
         align-items: flex-start;
         border-radius: 40px;
         background-color: #fafbfc;
+      }
+      .pricepackage:hover {
+        box-shadow: -8px -8px 0px 0px rgba(46, 65, 71, 0.4),
+          8px 8px 0px 0px rgba(41, 114, 139, 0.25);
+        .buttonSelect {
+          background-color: #303032;
+          color: #fafafa;
+        }
       }
       .pHead {
         font-family: hanuman;
@@ -318,9 +358,11 @@
 
       .priceFooterBG {
         background-image: url(Price&Footer\ Section.png);
-        /* width: 100vw;
-        height: 1120px; */
+        width: 100vw;
+        height: 1120px;
         background-size: cover;
+        flex-direction: column;
+        align-items: center;
       }
       .pTitleCont {
         display: flex;
@@ -365,9 +407,176 @@
         display: flex;
         height: 1022px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
         width: 100vw;
+        /* justify-content: center; */
+      }
+      .destination {
+        color: #000;
+        font-size: 42px;
+        font-weight: 500;
+        margin: 0;
+        text-transform: capitalize;
+      }
+      .pack {
+        color: rgba(24, 24, 27, 0.7);
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin: 0;
+      }
+      .frame173 {
+        display: flex;
+        width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+        height: 640px;
+        margin-top: 60px;
+      }
+      .leftContainer {
+        display: flex;
+        width: 513px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        flex-shrink: 0;
+        height: 640px;
+      }
+      .rightContainer {
+        width: 647px;
+        height: 640px;
+        flex-shrink: 0;
+        align-self: stretch;
+      }
+      .daysCont {
+        display: flex;
+        height: 112px;
+        padding: 30px 30px 30px 0px;
+        align-items: center;
+        align-self: stretch;
+        background: #eee9d9;
+        border-radius: 120px;
+        position: relative;
+      }
+      .daysCont .rightContainer .locImage {
+        visibility: hidden;
+      }
+      /* .daysCont:hover {
+        border: 4px solid #fff;
+      } */
+      .daysCont:hover .rightContainer .locImage {
+        border: 4px solid #fff;
+        visibility: visible;
+      }
+      .locImage {
+        width: 245.341px;
+        height: 245px;
+        position: absolute;
+        left: 359px;
+        top: 65px;
+        /* visibility: hidden; */
+      }
+      .lilCont {
+        display: flex;
+        padding-left: 30px;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 0 0;
+      }
+      .locInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 308px;
+        height: 47px;
+      }
+      .day {
+        width: 52px;
+        align-self: stretch;
+        height: 47px;
+        text-align: center;
+        color: #000;
+        font-family: arial;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 50%;
+        background-color: #f7f6f3;
+        align-content: center;
+      }
+      .locName {
+        font-family: arial;
+        color: var(--text-text-foreground, #09090b);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0;
+      }
+      .locDetails {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 94px;
+        height: 15px;
+      }
+      .locDetails img {
+        width: 14px;
+        height: 14px;
+        background: url(Icon\ Container.png);
+      }
+      .locDetails span {
+        color: var(--text-text-accent-foreground, #18181b);
+        font-family: Montserrat;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .socialmedia {
+        width: 358px;
+        height: 44px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+      }
+      .link {
+        width: 127px;
+        height: 24px;
+        display: flex;
+        min-height: 44px;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--radius-rounded-full, 9999px);
+        background: #fafbfc;
+      }
+      .link span {
+        color: #6972b5;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      #amarbaysgalant {
+        background: rgba(139, 184, 193, 0.8);
+      }
+      #khorgo {
+        background: rgba(170, 216, 215, 0.8);
+      }
+      #terkh {
+        background: rgba(139, 192, 189, 0.8);
+      }
+      #khuvsgul {
+        background: rgba(151, 204, 224, 0.8);
       }
     </style>
   </head>
@@ -437,7 +646,79 @@
     </section>
 
     <!-- Road Map Section -->
-    <section class="roadMapContainer"></section>
+    <section class="roadMapContainer">
+      <article>
+        <p class="destination">destination of our agency</p>
+        <p class="pack">pack your bags and get ready</p>
+      </article>
+      <div class="frame173">
+        <div class="leftContainer">
+          <div class="daysCont">
+            <div class="lilCont">
+              <div class="locInfo">
+                <p class="locName">Sukhbaatar Square</p>
+                <div class="locDetails">
+                  <img src="Icon.png" alt="location icon" />
+                  <span>Ulaanbator</span>
+                </div>
+              </div>
+              <div class="day">DAY 1</div>
+            </div>
+          </div>
+          <div class="daysCont" id="amarbaysgalant">
+            <div class="lilCont">
+              <div class="locInfo">
+                <p class="locName">Amarbaysgalant monastery</p>
+                <div class="locDetails">
+                  <img src="Icon.png" alt="location icon" />
+                  <span>Bulgan</span>
+                </div>
+              </div>
+              <div class="day">DAY 2</div>
+            </div>
+          </div>
+          <div class="daysCont" id="khorgo">
+            <div class="lilCont">
+              <div class="locInfo">
+                <p class="locName">Khorgiin togoo</p>
+                <div class="locDetails">
+                  <img src="Icon.png" alt="location icon" />
+                  <span>Arkhangai</span>
+                </div>
+              </div>
+              <div class="day">DAY 3</div>
+            </div>
+          </div>
+          <div class="daysCont" id="terkh">
+            <div class="lilCont">
+              <div class="locInfo">
+                <p class="locName">Terkhiin tsagaan lake</p>
+                <div class="locDetails">
+                  <img src="Icon.png" alt="location icon" />
+                  <span>Arkhangai</span>
+                </div>
+              </div>
+              <div class="day">DAY 4</div>
+            </div>
+          </div>
+          <div class="daysCont" id="khuvsgul">
+            <div class="lilCont">
+              <div class="locInfo">
+                <p class="locName">Khuvsgul lake</p>
+                <div class="locDetails">
+                  <img src="Icon.png" alt="location icon" />
+                  <span>Khuvsgul</span>
+                </div>
+              </div>
+              <div class="day">DAY 5</div>
+            </div>
+          </div>
+        </div>
+        <div class="rightContainer">
+          <img src="Frame 176.png" alt="Sukhbaatar Square" class="locImage" />
+        </div>
+      </div>
+    </section>
 
     <!-- price&footer section -->
     <section class="priceFooterBG">
@@ -447,7 +728,7 @@
         <span class="title2">Choose a package that's right for you</span>
       </div>
       <!-- price packages -->
-      <div class="cardContainer">
+      <div class="cardContainer" style="margin-top: 80px">
         <!-- all 500$-->
         <div class="pricepackage">
           <!-- header -->
@@ -621,8 +902,30 @@
             </div>
           </div>
         </div>
-        <footer></footer>
       </div>
+      <footer>
+        <header>
+          <div class="socialmedia">
+            <a
+              href="https://www.facebook.com/pinecone.academy.mongolia/"
+              target="_blank"
+              class="link"
+            >
+              <img src="Facebook Icon.png" alt="facebook icon" />
+              <span>Facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/pineconemongolia/?hl=en"
+              target="_blank"
+              class="link"
+            >
+              <img src="Instagram Icon.png" alt="instagram icon" />
+              <span>Instagram</span>
+            </a>
+          </div>
+          <img src="logo 1.png" alt="pinecone logo" class="logo" />
+        </header>
+      </footer>
     </section>
   </body>
 </html>
