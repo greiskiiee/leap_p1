@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinetour</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      nav {
+        margin-top: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      @font-face {
+        font-family: Bebas Neue;
+        src: url(BebasNeue-Regular.ttf);
+      }
+      @font-face {
+        font-family: Hanuman;
+        src: url(Hanuman-Regular.ttf);
+      }
+      .first {
+        background-image: url(HeroImage.png);
+        background-size: cover;
+      }
+      .heroCont {
+        width: 1204px;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        height: 43.5px;
+        width: 1204px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .actionContainer {
+        display: flex;
+        justify-content: space-between;
+        /* margin-left: 307px; */
+        width: 392px;
+        height: 21px;
+      }
+      .actions {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        font-family: arial;
+      }
+      .chooseLan {
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 0;
+        background-color: white;
+        padding: 13px;
+        text-align: center;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        justify-content: center;
+        align-content: center;
+      }
+      .textContainer {
+        display: block;
+        text-align: center;
+        line-height: 0%;
+      }
+      .pureMagic {
+        font-size: 80px;
+        color: #e8edf2b8;
+        opacity: 72%;
+        font-family: Bebas Neue;
+        margin-top: 107px;
+        font-weight: 400;
+      }
+      .awaits {
+        font-size: 250px;
+        color: #fdfdfefa;
+        opacity: 98%;
+        font-family: Bebas Neue;
+        font-weight: 400;
+      }
+      .year {
+        font-size: 64px;
+        color: white;
+        opacity: 80%;
+        font-family: Hanuman;
+        font-weight: 900;
+        font-style: normal;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .logo {
+        width: 101px;
+        height: 35px;
+      }
+      /* .container {
+        width: 1202px;
+        height: 370px;
+        display: flex;
+        padding: 65px 119px;
+        justify-content: center;
+        align-items: center;
+        background-color: #d8e4e9;
+      } */
+      .cardContainer {
+        width: 1202px;
+        height: 370px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card {
+        position: relative;
+        display: flex;
+        width: 275.49px;
+        height: 370px;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: -8px -8px 0px 0px rgba(31, 114, 170, 0.46),
+          8px 8px 0px 0px rgba(41, 114, 139, 0.25);
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 40px;
+      }
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-shadow: 0px 4px 4.9px rgba(0, 0, 0, 0.65);
+        transform: translate(-50%, -50%);
+        color: #fdfdfe;
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        padding: 10px;
+        text-align: center;
+        font-family: Bebas Neue;
+      }
+      .card:hover {
+        opacity: 0.4;
+      }
+      .pricepackage {
+        display: flex;
+        width: 384px;
+        height: 527px;
+        padding: var(--0-px-unit-0, 0px);
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 40px;
+        background-color: #fafbfc;
+      }
+      .pHead {
+        font-family: hanuman;
+        font-size: 18px;
+        font-style: normal;
+        line-height: normal;
+        display: inline;
+      }
+      .buttonSelect {
+        width: 336px;
+        height: 48px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 99px;
+        background: #a4d1e2;
+        display: flex;
+        border-width: 0;
+        font-weight: 500;
+        font-size: 16px;
+      }
+      .header {
+        display: flex;
+        padding: 32px 24px 24px 24px;
+        width: 336px;
+        height: 36px;
+        gap: 16px;
+        align-items: center;
+        justify-content: left;
+      }
+      .heartIcon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 24px 48px 24px;
+        width: 336px;
+        height: 375px;
+        align-items: center;
+        /* gap: 32px; */
+        justify-content: center;
+      }
+      .details {
+        width: 336px;
+        height: 375px;
+        display: flex;
+        flex-direction: column;
+        /* gap: 24px; */
+        align-items: center;
+        justify-content: space-between;
+      }
+      .priceSection {
+        width: 336px;
+        height: 78px;
+        display: flex;
+        flex-direction: column;
+        /* align-content: space-between; */
+        gap: 10px;
+      }
+      .price {
+        margin: 0%;
+        font-size: 40px;
+        font-family: arial;
+        font-weight: 600px;
+      }
+      .priceInfo {
+        display: flex;
+        height: 19px;
+        color: #919191;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        margin: 0%;
+        font-family: sans-serif;
+      }
+      .locationContainer {
+        width: 100vw;
+        height: 370px;
+        padding: 65px 0px;
+        display: flex;
+        /* gap: 16px; */
+        justify-content: center;
+        font-family: montserrat;
+        align-content: center;
+        background-color: #d8e4e9;
+      }
+      .container {
+        width: 336px;
+        height: 177px;
+        display: flex;
+        flex-direction: column;
+        /* gap: 16px; */
+        justify-content: space-evenly;
+        font-family: montserrat;
+        align-content: space-evenly;
+      }
+      .headerCont {
+        width: 256px;
+        height: 21px;
+        align-items: center;
+        justify-content: center;
+      }
+      .itemCont {
+        width: 336;
+        height: 20px;
+        align-items: left;
+        justify-content: left;
+        display: flex;
+        row-gap: 20px;
+        column-gap: 20px;
+      }
+      .includes {
+        font-size: 18px;
+        color: #121316;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0%;
+        margin-left: 40px;
+      }
+      .included {
+        color: #3f4145;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      .popular {
+        display: flex;
+        width: 53px;
+        height: 19px;
+        background-color: #6972b5;
+        padding: 4px 16px 4px 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 99px;
+        color: #fafbfc;
+        text-align: center;
+        font-family: montserrat;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .priceFooterBG {
+        background-image: url(Price&Footer\ Section.png);
+        /* width: 100vw;
+        height: 1120px; */
+        background-size: cover;
+      }
+      .pTitleCont {
+        display: flex;
+        width: 1202px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 84px;
+        margin-bottom: 80px;
+      }
+      .title1 {
+        color: #000;
+        text-align: center;
+        font-family: arial;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: block;
+      }
+      .title2 {
+        color: rgba(24, 24, 27, 0.7);
+        text-align: center;
+        font-family: arial;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+        display: block;
+      }
+      .pricepackages {
+        display: flex;
+        justify-content: space-around;
+        width: 1200px;
+        height: 527px;
+        align-items: center;
+      }
+      .roadMapContainer {
+        background-image: url(Map\ Image.png);
+        display: flex;
+        height: 1022px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100vw;
+      }
+    </style>
+  </head>
+
+  <body style="display: block">
+    <section class="first">
+      <div class="heroCont">
+        <nav class="navbar">
+          <img src="logo 1.png" alt="pinecone logo" class="logo" />
+          <div class="actionContainer">
+            <a href="https://www.google.com" target="_top" class="actions"
+              >Home</a
+            >
+            <a href="https://www.google.com" target="_top" class="actions"
+              >About</a
+            >
+            <a href="https://www.google.com" target="_top" class="actions"
+              >Contact</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="21"
+              viewBox="0 0 20 21"
+              fill="none"
+            >
+              <path
+                d="M15.8333 18V16.3333C15.8333 15.4493 15.4821 14.6014 14.857 13.9763C14.2319 13.3512 13.384 13 12.5 13H7.49996C6.6159 13 5.76806 13.3512 5.14294 13.9763C4.51782 14.6014 4.16663 15.4493 4.16663 16.3333V18M13.3333 6.33333C13.3333 8.17428 11.8409 9.66667 9.99996 9.66667C8.15901 9.66667 6.66663 8.17428 6.66663 6.33333C6.66663 4.49238 8.15901 3 9.99996 3C11.8409 3 13.3333 4.49238 13.3333 6.33333Z"
+                stroke="#E4E4E7"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <button class="chooseLan">EN</button>
+        </nav>
+
+        <div class="textContainer">
+          <h2 class="pureMagic">PURE MAGIC</h2>
+          <h1 class="awaits">AWAITS!</h1>
+          <h3 class="year">2024</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="locationContainer">
+      <div class="cardContainer">
+        <div class="card">
+          <img src="terkhiin tsagaan lake.png" alt="Terkhiin Tsagaan Lake" />
+          <div class="center">TERKHIIN TSAGAAN LAKE</div>
+        </div>
+        <div class="card">
+          <img src="amarbaysgalant.png" alt="Amarbaysgalant Monastery" />
+          <div class="center">AMARBAYSGALANT MONASTERY</div>
+        </div>
+        <div class="card">
+          <img src="huwsgul.png" alt="Khuvsgul Lake" />
+          <div class="center">KHUVSGUL LAKE</div>
+        </div>
+        <div class="card">
+          <img src="khorgo.png" alt="Khorgiin Togoo" />
+          <div class="center">KHORGIIN TOGOO</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Road Map Section -->
+    <section class="roadMapContainer"></section>
+
+    <!-- price&footer section -->
+    <section class="priceFooterBG">
+      <!-- titlecontainer -->
+      <div class="pTitleCont">
+        <span class="title1">Pricing of Our Agency</span>
+        <span class="title2">Choose a package that's right for you</span>
+      </div>
+      <!-- price packages -->
+      <div class="cardContainer">
+        <!-- all 500$-->
+        <div class="pricepackage">
+          <!-- header -->
+          <div class="header">
+            <img src="IconButton.png" alt="IconButton" class="heartIcon" />
+            <span class="pHead">Budget Package</span>
+          </div>
+          <!-- content -->
+          <div class="content">
+            <!-- details -->
+            <div class="details">
+              <!-- price section -->
+              <div class="priceSection">
+                <p class="price">500$</p>
+                <p class="priceInfo">Essentials Covered</p>
+              </div>
+              <!-- container -->
+              <div class="container">
+                <!-- header container -->
+                <div class="headerCont">
+                  <p class="includes">Includes</p>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Group transportation (shared van/bus)</span
+                  >
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Standard accommodation (yurt or guesthouse)</span
+                  >
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included">Guided lake tour</span>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included">1 meal per day (breakfast)</span>
+                </div>
+              </div>
+              <button class="buttonSelect">Select package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- all 800$-->
+        <div class="pricepackage">
+          <!-- header -->
+          <div class="header">
+            <img src="IconButton.png" alt="IconButton" class="heartIcon" />
+            <span class="pHead">Standard Package</span>
+          </div>
+          <!-- content -->
+          <div class="content">
+            <!-- details -->
+            <div class="details">
+              <!-- price section -->
+              <div class="priceSection">
+                <p class="price">800$</p>
+                <!-- subtitle container -->
+                <div
+                  style="
+                    display: flex;
+                    width: 336px;
+                    height: 27px;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <p class="priceInfo">Balanced Adventure</p>
+                  <div class="popular">
+                    <span>Popular</span>
+                  </div>
+                </div>
+              </div>
+              <!-- container -->
+              <div class="container">
+                <!-- header container -->
+                <div class="headerCont">
+                  <p class="includes">Includes</p>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Comfortable transportation (mini-bus)
+                  </span>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Mid-range accommodation (private yurt or lodge)</span
+                  >
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included">Guided lake tour + nearby hiking</span>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >2 meals per day (breakfast and dinner)</span
+                  >
+                </div>
+              </div>
+              <button class="buttonSelect">Select package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- all 1200$-->
+        <div class="pricepackage">
+          <!-- header -->
+          <div class="header">
+            <img src="IconButton.png" alt="IconButton" class="heartIcon" />
+            <span class="pHead">Luxury Package</span>
+          </div>
+          <!-- content -->
+          <div class="content">
+            <!-- details -->
+            <div class="details">
+              <!-- price section -->
+              <div class="priceSection">
+                <p class="price">1200$</p>
+                <p class="priceInfo">Ultimate Comfort</p>
+              </div>
+              <!-- container -->
+              <div class="container">
+                <!-- header container -->
+                <div class="headerCont">
+                  <p class="includes">Includes</p>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included">Private transportation (SUV)</span>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Luxury accommodation (lakefront lodge)
+                  </span>
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >Guided tours (lake + reindeer herder experience)</span
+                  >
+                </div>
+                <!-- item container -->
+                <div class="itemCont">
+                  <img src="check.png" alt="checkIcon" />
+                  <span class="included"
+                    >All meals included (local cuisine)</span
+                  >
+                </div>
+              </div>
+              <button class="buttonSelect">Select package</button>
+            </div>
+          </div>
+        </div>
+        <footer></footer>
+      </div>
+    </section>
+  </body>
+</html>
