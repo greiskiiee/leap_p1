@@ -67,6 +67,7 @@
       }
       .heroCont {
         width: 1204px;
+        justify-items: center;
       }
       .navbar {
         display: flex;
@@ -75,6 +76,8 @@
         width: 1204px;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        z-index: 6;
       }
       .actionContainer {
         display: flex;
@@ -107,14 +110,17 @@
       .textContainer {
         display: block;
         text-align: center;
-        line-height: 0%;
+        /* line-height: 0%; */
+        width: 618px;
+        height: 394px;
+        margin-top: 169px;
       }
       .pureMagic {
         font-size: 80px;
         color: #e8edf2b8;
         opacity: 72%;
         font-family: Bebas Neue;
-        margin-top: 107px;
+        /* margin-top: 107px; */
         font-weight: 400;
       }
       .awaits {
@@ -140,15 +146,6 @@
         width: 101px;
         height: 35px;
       }
-      /* .container {
-        width: 1202px;
-        height: 370px;
-        display: flex;
-        padding: 65px 119px;
-        justify-content: center;
-        align-items: center;
-        background-color: #d8e4e9;
-      } */
       .cardContainer {
         width: 1202px;
         height: 370px;
@@ -437,7 +434,7 @@
       }
       .leftContainer {
         display: flex;
-        width: 513px;
+        width: 1200px;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
@@ -452,6 +449,7 @@
       }
       .daysCont {
         display: flex;
+        width: 512px;
         height: 112px;
         padding: 30px 30px 30px 0px;
         align-items: center;
@@ -460,22 +458,19 @@
         border-radius: 120px;
         position: relative;
       }
-      .daysCont .rightContainer .locImage {
+      .daysCont .locImage {
         visibility: hidden;
       }
-      /* .daysCont:hover {
+      .daysCont:hover {
         border: 4px solid #fff;
-      } */
-      .daysCont:hover .rightContainer .locImage {
-        border: 4px solid #fff;
+      }
+      .daysCont:hover .locImage {
         visibility: visible;
       }
       .locImage {
         width: 245.341px;
         height: 245px;
         position: absolute;
-        left: 359px;
-        top: 65px;
         /* visibility: hidden; */
       }
       .lilCont {
@@ -578,6 +573,26 @@
       #khuvsgul {
         background: rgba(151, 204, 224, 0.8);
       }
+      #sukhbaatarImg {
+        left: 900px;
+        top: 100px;
+      }
+      #amarbaysgalantImg {
+        left: 700px;
+        top: -140px;
+      }
+      #khorgoImg {
+        left: 600px;
+        top: -140px;
+      }
+      #terkhImg {
+        left: 550px;
+        top: -500px;
+      }
+      #khuvsgulImg {
+        left: 700px;
+        top: -550px;
+      }
     </style>
   </head>
 
@@ -616,9 +631,9 @@
         </nav>
 
         <div class="textContainer">
-          <h2 class="pureMagic">PURE MAGIC</h2>
-          <h1 class="awaits">AWAITS!</h1>
-          <h3 class="year">2024</h3>
+          <span class="pureMagic">PURE MAGIC</span>
+          <span class="awaits">AWAITS!</span>
+          <span class="year">2024</span>
         </div>
       </div>
     </section>
@@ -664,6 +679,12 @@
               </div>
               <div class="day">DAY 1</div>
             </div>
+            <img
+              src="Frame 176.png"
+              alt="Sukhbaatar Square"
+              class="locImage"
+              id="sukhbaatarImg"
+            />
           </div>
           <div class="daysCont" id="amarbaysgalant">
             <div class="lilCont">
@@ -676,6 +697,12 @@
               </div>
               <div class="day">DAY 2</div>
             </div>
+            <img
+              src="Frame 177.png"
+              alt="amarbaysgalant monastery"
+              class="locImage"
+              id="amarbaysgalantImg"
+            />
           </div>
           <div class="daysCont" id="khorgo">
             <div class="lilCont">
@@ -688,6 +715,12 @@
               </div>
               <div class="day">DAY 3</div>
             </div>
+            <img
+              src="11111.png"
+              alt="Khorgiin togoo"
+              class="locImage"
+              id="khorgoImg"
+            />
           </div>
           <div class="daysCont" id="terkh">
             <div class="lilCont">
@@ -700,6 +733,12 @@
               </div>
               <div class="day">DAY 4</div>
             </div>
+            <img
+              src="Frame 178.png"
+              alt="terkhiin tsagaan lake"
+              class="locImage"
+              id="terkhImg"
+            />
           </div>
           <div class="daysCont" id="khuvsgul">
             <div class="lilCont">
@@ -712,11 +751,17 @@
               </div>
               <div class="day">DAY 5</div>
             </div>
+            <img
+              src="Frame 179.png"
+              alt="Khuvsgul lake"
+              class="locImage"
+              id="khuvsgulImg"
+            />
           </div>
         </div>
-        <div class="rightContainer">
+        <!-- <div class="rightContainer">
           <img src="Frame 176.png" alt="Sukhbaatar Square" class="locImage" />
-        </div>
+        </div> -->
       </div>
     </section>
 
