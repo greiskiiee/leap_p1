@@ -198,7 +198,7 @@ header {
 .pricepackage:hover {
   box-shadow: -8px -8px 0px 0px rgba(46, 65, 71, 0.4),
     8px 8px 0px 0px rgba(41, 114, 139, 0.25);
-  .buttonSelect {
+  button {
     background-color: #303032;
     color: #fafafa;
   }
